@@ -1,0 +1,7 @@
+package com.exception;
+
+public class StudentDAOException {
+	public StudentDAOException() {
+		// TODO Auto-generated constructor stub
+	}
+}

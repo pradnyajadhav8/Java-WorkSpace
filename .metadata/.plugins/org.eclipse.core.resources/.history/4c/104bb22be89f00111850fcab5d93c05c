@@ -1,0 +1,14 @@
+package moderate;
+
+public class App {
+	public static void main(String[] args) {
+		
+		Task task1 = new Task(1, "Complete assignment", 5);
+		Task task2 = new Task(2, "Study Java", 3);
+		Task task3 = new Task(3, "Practice coding", 1);
+		Task task4 = new Task(4, "Read book", 4);
+		Task task5 = new Task(5, "Attend meeting", 1);
+		
+		
+	}
+}

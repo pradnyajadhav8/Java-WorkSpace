@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.service.StudentServiceImpl&apos; to &apos;StudentService&apos;&#x0D;&#x0A;- Original project: &apos;Project04-JDBC&apos;&#x0D;&#x0A;- Original element: &apos;com.service.StudentServiceImpl&apos;&#x0D;&#x0A;- Renamed element: &apos;com.service.StudentService&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;StudentServiceImpl&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.service{StudentServiceImpl.java[StudentServiceImpl" matchStrategy="1" name="StudentService" qualified="false" references="true" similarDeclarations="false" stamp="1787045132376" textual="false" version="1.0"/>
+</session>

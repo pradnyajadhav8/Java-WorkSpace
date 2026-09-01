@@ -1,0 +1,13 @@
+package basic;
+
+public class App implements Addable{
+	public static void main(String[] args) {
+
+		@Override
+		public void doAdd(int a, int b) {
+			// TODO Auto-generated method stub
+			
+		}
+	}
+	
+}

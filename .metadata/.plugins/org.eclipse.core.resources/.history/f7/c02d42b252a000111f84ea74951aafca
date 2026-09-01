@@ -1,0 +1,53 @@
+package moderate;
+
+import java.util.Comparator;
+import java.util.PriorityQueue;
+import java.util.Queue;
+
+public class App {
+	public static void main(String[] args) {
+		
+		Task t1 = new Task(1, "Complete assignment", 5);
+		Task t2 = new Task(2, "Study Java", 3);
+		Task t3 = new Task(3, "Practice coding", 1);
+		Task t4 = new Task(4, "Read book", 2);
+		Task t5 = new Task(5, "Attend meeting", 4);
+
+		Queue<Task> taskList=new PriorityQueue<Task>();
+		
+		taskList.add(t1);
+		taskList.add(t2);
+		taskList.add(t3);
+		taskList.add(t4);
+		taskList.add(t5);
+
+		System.out.println("_____________________________");
+		for(Task task : taskList)
+			System.out.println(task);
+		
+		System.out.println("______________________________");
+		while(! taskList.isEmpty()) {
+			System.out.println(taskList.poll());
+		}
+		
+		Comparator<Task> byPriority=new Comparator<Task>() {
+
+			@Override
+			public int compare(Task o1, Task o2) {
+				
+				return -Integer.valueOf(o1.getTaskPriority()).compareTo(Integer.valueOf(o2.getTaskPriority()));
+			}
+			
+		};
+		
+		PriorityQueue<Task> taskQueue =  new PriorityQueue<Task>(byPriority);
+		taskQueue.add(t1);
+		taskQueue.add(t2);
+		taskQueue.add(t3);
+		taskQueue.add(t4);
+		taskQueue.add(t5);
+		
+		//Need To Print
+		//
+	}
+}

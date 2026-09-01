@@ -1,0 +1,31 @@
+package p1;
+
+import java.util.TreeSet;
+
+public class App {
+	public static void main(String[] args) {
+		
+		Student s1=new Student(101,"Alia",44.44);
+		Student s2=new Student(102,"Bobby",70.88);
+		Student s3=new Student(108,"Charlie",80.88);
+		Student s4=new Student(103,"Dolly",52.33);
+		Student s5=new Student(105,"Eclips",99.99);
+		Student s6=new Student(104,"Pradnya",99.98);
+		
+		TreeSet<Student>jap89=new TreeSet<Student>();
+		jap89.add(s1);
+		jap89.add(s2);
+		jap89.add(s3);
+		jap89.add(s4);
+		jap89.add(s6);
+		jap89.add(s4);
+		jap89.add(s5);
+		
+		System.out.println(jap89);
+		System.out.println("_______________________________");
+		
+		Comparator<Student>byName=new StudentNameComparable();
+		TreeSet<Student> jap89Name=new TreeSet<Student>(byName);
+		
+	}
+}

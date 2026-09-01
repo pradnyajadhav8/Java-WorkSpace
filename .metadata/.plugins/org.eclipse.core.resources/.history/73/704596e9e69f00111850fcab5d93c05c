@@ -1,0 +1,7 @@
+package moderate;
+
+public class Task {
+	private taskId;
+	private taskName;
+	private taskPriority;
+}

@@ -1,0 +1,22 @@
+package com.basic;
+
+import java.util.TreeSet;
+
+public class App {
+	public static void main(String[] args) {
+		Employee s1 = new Employee();
+		Employee s2 = new Employee();
+		Employee s3 = new Employee();
+		Employee s4 = new Employee();
+		
+		TreeSet<Employee> jpa89 = new TreeSet<Employee>();
+		jpa89.add(s1);
+		jpa89.add(s2);
+		jpa89.add(s3);
+		jpa89.add(s4);
+		
+		for (Employee employee : jpa89)
+			System.out.println(employee);
+		}
+
+}

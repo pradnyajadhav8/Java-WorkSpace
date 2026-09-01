@@ -1,0 +1,8 @@
+package basic;
+
+public class App implements Addable{
+	public static void main(String[] args) {
+		
+		Addable add
+	}
+}

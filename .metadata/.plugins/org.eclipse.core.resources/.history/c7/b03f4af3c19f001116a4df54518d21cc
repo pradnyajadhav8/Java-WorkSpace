@@ -1,0 +1,169 @@
+package com.app;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Scanner;
+
+import javax.sound.midi.SysexMessage;
+
+import com.dao.StudentDAO;
+import com.dao.StudentDAOImpl;
+import com.model.Student;
+import com.service.StudentService;
+import com.service.StudentServiceImpl;
+import com.validator.StudentValidator;
+
+public class App {
+
+	private static Scanner scanner = new Scanner(System.in);
+	private static StudentService service = new StudentServiceImpl();
+
+	public static void main(String[] args) throws IOException {
+
+		int option;
+		do {
+			showMenu();
+
+			System.out.println("Enter Option ");
+			option = scanner.nextInt();
+
+			switch (option) {
+
+			case 1:
+				addStudent();
+				break;
+
+			case 2:
+				deleteStudent();
+				break;
+
+			case 3:
+				updateStudent();
+				break;
+
+			case 4:
+				showStudents();
+				break;
+
+			case 5:
+				System.out.println("Thank you for using !");
+				break;
+
+			default:
+				System.out.println("Invalid Choice!");
+			}
+
+		} while (option != 5);
+
+	}
+
+	private static void updateStudent() {
+		// take id
+		System.out.println("Enter ID  STUDENT ");
+		int id = scanner.nextInt();
+		Student student = service.getStudentById(id);
+		if (student != null) {
+			// show details findStudentById()
+			System.out.println(student);
+			// Update Details
+			System.out.println("ADD UPDATE CHANGES ....");
+			student = inputStudent();
+			student.setId(id);
+
+			// update
+			int rows = service.modifyStudent(student);
+			if (rows > 0)
+				System.out.println("UPDATE SUCCESS");
+			else
+				System.out.println("FAILED TO UPDATE ");
+
+		} else {
+			System.out.println("STUDENT NOT EXIST");
+			System.err.println(StudentValidator.msg.toUpperCase());
+		}
+		// update
+	}
+
+	private static void deleteStudent() {
+
+		System.out.println("Enter ID  STUDENT ");
+		int id = scanner.nextInt();
+
+		if (id < 0) {
+			System.err.println("ID NEVER NEGATIVE..!");
+		} else {
+			int rows = service.removeStudent(id);
+			if (rows > 0)
+				System.out.println("DELETE SUCCESS");
+			else
+				System.out.println("FAILED TO DELETE ");
+		}
+	}
+
+	private static void addStudent() {
+
+		Student student = inputStudent();
+		if (StudentValidator.isStudentValid(student)) {
+
+			int rows = service.registerStudent(student);
+			if (rows > 0)
+				System.out.println("ADD SUCCESS");
+			else
+				System.out.println("FAILED TO ADD ");
+
+		} else {
+			System.out.printf("NOT A VALID DATA...!\n");
+			System.err.println(StudentValidator.msg.toUpperCase());
+		}
+	}
+
+	private static void showStudents() {
+		System.out.println("===================== DISPLAY =======================");
+		List<Student> list = service.getAllStudnets();
+		System.out.println("=====================================================");
+		for (Student student : list)
+			System.out.println(student);
+	}
+
+	private static void showMenu() {
+
+		System.out.println();
+		System.out.println("=========================================================");
+		System.out.println("          STUDENT OP");
+		System.out.println("=========================================================");
+		System.out.println(" 1. ADD STUDENT");
+		System.out.println(" 2. DELETE STUDENT");
+		System.out.println(" 3. UPDATE STUDENT");
+		System.out.println(" 4. SHOW STUDENT");
+		System.out.println(" 5. EXIT");
+		System.out.println("=========================================================");
+
+	}
+
+	private static Student inputStudent() {
+
+		System.out.print("Enter STUDENT Name: ");
+		scanner.nextLine();
+		String name = scanner.nextLine();
+
+		System.out.print("Enter MARKS: ");
+		float marks = scanner.nextFloat();
+
+		scanner.nextLine();
+		System.out.println("ENTER GENDER");
+		String gender = scanner.nextLine();
+		
+		Student student=new Student(name, marks, gender);
+		
+		if(StudentValidator.isStudentValid(student))
+			return student;
+		else {
+			System.out.println("Not Valid Student ..!");
+			System.err.println(StudentValidator.msg.toUpperCase());
+			System.exit(0);
+		}
+		
+		return student;
+	}
+
+}

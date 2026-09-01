@@ -1,0 +1,60 @@
+package com.basic;
+
+import basic.Student;
+
+public class Employee implements Comparable<Employee> {
+	private int id;
+	private String dept;
+	private double Salary;
+	
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getDept() {
+		return dept;
+	}
+
+	public void setDept(String dept) {
+		this.dept = dept;
+	}
+
+	public double getSalary() {
+		return Salary;
+	}
+
+	public void setSalary(double salary) {
+		Salary = salary;
+	}
+
+	public Employee(int id, String dept, double salary) {
+		super();
+		this.id = id;
+		this.dept = dept;
+		Salary = salary;
+	}
+	
+	public Employee() {
+		
+	}
+	
+	@Override
+	public String toString() {
+		
+		String res = String.format("%-5d  %-20s  %-4f \n", id, dept, Salary);
+		return res;
+
+	}
+
+	@Override
+	public int compareTo(Employee obj) {
+
+		return  (Double.valueOf(Salary).compareTo(obj.Salary));
+	}
+
+}
