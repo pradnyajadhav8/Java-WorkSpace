@@ -9,13 +9,13 @@ public class DBUtility {
 	private final static String USERNAME = "root";
 	private final static String PASSWORD = "Pradnya@01";
 	
-//"jdbc:mysql://localhost:3306/jap89_db01"
+
 	private static DBUtility instance = null;
 
 	private DBUtility() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-		} catch (ClassNotFoundException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

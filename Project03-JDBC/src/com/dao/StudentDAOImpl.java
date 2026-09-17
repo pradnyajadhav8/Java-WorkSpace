@@ -20,7 +20,7 @@ public class StudentDAOImpl implements StudentDAO {
 			
 
 			ps.setString(1, addStudent.getName());
-			ps.setFloat(2, addStudent.getMarks());
+			ps.setDouble(2, addStudent.getMarks());
 			ps.setString(3, addStudent.getGender());
 
 			return ps.executeUpdate();
@@ -37,7 +37,7 @@ public class StudentDAOImpl implements StudentDAO {
 		try (Connection con = DBUtility.getInstance().getDBConnection();PreparedStatement ps = con.prepareStatement(sql)){
 			
 			ps.setString(1, upstudent.getName());
-			ps.setFloat(2, upstudent.getMarks());
+			ps.setDouble(2, upstudent.getMarks());
 			ps.setString(3, upstudent.getGender());
 			ps.setInt(4, upstudent.getId());
 			return ps.executeUpdate();
@@ -78,7 +78,7 @@ public class StudentDAOImpl implements StudentDAO {
 				Student student = new Student();
 				student.setId(rs.getInt("id"));
 				student.setName(rs.getString("name"));
-				student.setMarks(rs.getFloat("marks"));
+				student.setMarks(rs.getDouble("marks"));
 				student.setGender(rs.getString("gender"));
 				list.add(student);
 			}
@@ -103,11 +103,12 @@ public class StudentDAOImpl implements StudentDAO {
 				student = new Student();
 				student.setId(rs.getInt("id"));
 				student.setName(rs.getString("name"));
-				student.setMarks(rs.getFloat("marks"));
+				student.setMarks(rs.getDouble("marks"));
 				student.setGender(rs.getString("gender"));
 
 			}
-
+			
+			return student;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

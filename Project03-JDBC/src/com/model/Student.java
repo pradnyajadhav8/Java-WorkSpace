@@ -3,14 +3,14 @@ package com.model;
 public class Student {
 	private int id;
 	private String name;
-	private float marks;
+	private Double marks;
 	private String gender;
 
 	public Student() {
 
 	}
 
-	public Student(int id, String name, float marks, String gender) {
+	public Student(int id, String name, Double marks, String gender) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -18,7 +18,7 @@ public class Student {
 		this.gender = gender;
 	}
 
-	public Student(String name, float marks, String gender) {
+	public Student(String name, Double marks, String gender) {
 		this.name = name;
 		this.marks = marks;
 		this.gender = gender;
@@ -40,11 +40,11 @@ public class Student {
 		this.name = name;
 	}
 
-	public float getMarks() {
+	public Double getMarks() {
 		return marks;
 	}
 
-	public void setMarks(float marks) {
+	public void setMarks(Double marks) {
 		this.marks = marks;
 	}
 
@@ -57,7 +57,7 @@ public class Student {
 	}
 
 	public String toString() {
-		return String.format("%-5d %-25s %-5f %-5s", id, name, marks, gender);
+		return String.format("%-5d %-25s %-5d %-5s", id, name, marks, gender);
 
 	}
 

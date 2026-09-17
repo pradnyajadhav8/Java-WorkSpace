@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 
 public class DBUtility {
 
-	private final static String URL = "jdbc:mysql:://localhost:3306/VMTEmp";
+	private final static String URL = "jdbc:mysql://localhost:3306/VMTEmp";
 	private final static String USERNAME = "root";
 	private final static String PASSWORD = "Pradnya@01";
 

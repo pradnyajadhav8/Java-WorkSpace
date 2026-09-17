@@ -132,7 +132,7 @@ public class App {
 		String name = scanner.nextLine();
 
 		System.out.print("Enter MARKS: ");
-		float marks = scanner.nextFloat();
+		Double marks = scanner.nextDouble();
 
 		scanner.nextLine();
 		System.out.println("ENTER GENDER");
