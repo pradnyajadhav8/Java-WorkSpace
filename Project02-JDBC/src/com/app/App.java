@@ -1,4 +1,4 @@
-package com.app;
+  package com.app;
 
 import java.util.List;
 import java.util.Scanner;
@@ -111,6 +111,7 @@ public class App {
 	}
 
 	private static Student inputStudent() {
+		
 		System.out.println("Enter Student name: ");
 		scanner.nextLine();
 		String name = scanner.nextLine();
@@ -123,5 +124,6 @@ public class App {
 		String gender = scanner.nextLine();
 
 		return new Student(name, marks, gender);
+		
 	}
 }

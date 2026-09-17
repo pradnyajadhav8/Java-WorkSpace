@@ -60,7 +60,7 @@ public class Employee {
 
 	@Override
 	public String toString() {
-		return String.format("%-5s%-10s%-10s%-15s%-10s \n", "ID", "NAME", "ADDRESS", "PHONE NUMBER", "EMAIL ADDRESS");
+		return String.format("%-5s%-10s%-20s%-20s%-10s \n", id, name, address,email, number);
 	}
 
 }

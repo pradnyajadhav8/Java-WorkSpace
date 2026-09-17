@@ -1,4 +1,4 @@
-package com.insert;
+ package com.insert;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -10,7 +10,7 @@ public class Student {
 
 	}
 
-	public Student(int id, String name, double marks, String gender) {
+	public Student(int  id, String name, double marks, String gender) {
 		super();
 		this.id = id;
 		this.name = name;
