@@ -24,7 +24,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 			ps.setString(5, addEmployee.getEmail());
 			
 			return ps.executeUpdate();
-		}catch (Exception e) {
+		}catch ( Exception e) {
 			e.printStackTrace();
 			System.err.println(e);
 		}
